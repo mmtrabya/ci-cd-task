@@ -20,14 +20,6 @@ stages:
   - job: DeployJob
     displayName: kubectl apply manifests
     steps:
-      # Install kubectl
-      - bash: |
-          set -e
-          curl -sSLo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-          sudo install -m 0755 kubectl /usr/local/bin/kubectl
-          kubectl version --client
-        displayName: Install kubectl
-
       # Install AWS CLI v2
       - bash: |
           set -e
