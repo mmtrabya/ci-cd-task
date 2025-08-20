@@ -5,7 +5,7 @@ trigger:
       - main   # deploy on main; change/remove as you like
 
 pool:
-  vmImage: ubuntu-latest
+  name: ci-cd
 
 # You can set these in the Variables UI instead of hardcoding.
 variables:
