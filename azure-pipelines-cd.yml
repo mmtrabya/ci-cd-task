@@ -21,15 +21,6 @@ stages:
   - job: DeployJob
     displayName: kubectl apply manifests
     steps:
-      # Install AWS CLI v2
-      - bash: |
-          set -e
-          curl -sSLo awscliv2.zip https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-          unzip -q awscliv2.zip
-          sudo ./aws/install
-          aws --version
-        displayName: Install AWS CLI
-
       # Configure AWS creds (from pipeline secrets)
       - bash: |
           set -e
