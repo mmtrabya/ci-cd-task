@@ -44,9 +44,9 @@ stages:
       - bash: |
           set -e
           export KUBECONFIG="$(KUBECONFIG_PATH)"
-          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f kubernetes/deployment.yml
           kubectl rollout status deployment/microservice --timeout=180s || true
-          kubectl apply -f k8s/service.yaml
+          kubectl apply -f kubernetes/service.yml
           kubectl get svc microservice-service
         displayName: kubectl apply (deployment + service)
 
